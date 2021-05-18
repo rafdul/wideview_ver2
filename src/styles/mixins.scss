@@ -1,0 +1,83 @@
+@import "settings.scss";
+
+@mixin container {
+  margin: 0 auto;
+  padding: $base-size/2 $base-size;
+  max-width: 1180px;
+  // height: 200px;
+}
+
+@mixin flex-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+
+@mixin flex-cards-item {
+  margin: $main-spacing;
+  flex-grow: 1;
+  align-self: stretch;
+}
+
+@mixin btnBook {
+  text-align: center;
+  margin-bottom: $main-spacing*3;
+
+  &:hover {
+    transform: scale(1.2, 1.2);
+    transition-duration: 400ms;
+  }
+}
+
+@mixin cart-box {
+  margin: $main-spacing*2 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  div:not(:first-child) {
+    margin: $main-spacing;
+  }
+}
+
+@mixin total_price {
+  justify-content: flex-end;
+
+  .text {
+    font-size: $base-size*2;
+  }
+
+  div:nth-child(2) {
+    margin-right: $main-spacing*4;
+  }
+
+  .btnBook {
+    @include btnBook;
+
+    .btn_custom {
+      margin-right: $main-spacing*4;
+    }
+  }
+}
+
+@mixin snackbarr__success {
+  bottom: 40vh;
+
+  div:nth-child(1){
+    background-color: $color-text-success;
+  }
+}
+
+@mixin snackbarr__error {
+  bottom: 40vh;
+
+  div:nth-child(1){
+    background-color: $color-text-error;
+  }
+}
+
+

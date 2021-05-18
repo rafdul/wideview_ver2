@@ -1,0 +1,14 @@
+@import '../../../styles/settings.scss';
+@import "../../../styles/mixins.scss";
+
+
+.root {
+  .container{
+    @include container;
+    height: 50vh;
+
+    .title {
+      margin: $main-spacing*3 0;
+    }
+  }
+}

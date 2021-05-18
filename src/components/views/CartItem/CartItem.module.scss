@@ -1,0 +1,125 @@
+@import '../../../styles/settings.scss';
+@import "../../../styles/mixins.scss";
+
+.root {
+  margin-bottom: $main-spacing;
+
+  .cart {
+    margin: $main-spacing*2 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    div:not(:first-child) {
+      margin: $main-spacing;
+    }
+
+    &__imagebox {
+      flex-basis: 20%;
+      min-width: 160px;
+      padding: 0 $main-spacing/2;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__namebox {
+      flex-basis: 30%;
+    }
+
+    &__nightsbox {
+      flex-basis: 25%;
+    }
+
+    &__pricebox {
+      flex-basis: 20%;
+    }
+
+    &__deletebox {
+      flex-basis: 5%;
+
+      .deleteIcon{
+        font-size: 18px;
+        color: $color-text-grey;
+      }
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2, 1.2);
+        transition-duration: 300ms;
+      }
+    }
+
+    &__decoration {
+      font-weight: 700;
+    }
+  }
+
+  .infobox {
+    flex-basis: 90%;
+    // margin: $main-spacing;
+    // text-align: center;
+
+    .accordion_summary {
+      margin: 0 auto;
+      color: $color-text-grey;
+    }
+
+    .accordion_details {
+      justify-content: center;
+
+      .textarea {
+        width: 60%;
+      }
+
+      @media(max-width: 700px) {
+        .textarea {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  @media(max-width: 750px) {
+    .cart {
+      flex-wrap: wrap;
+
+      &__imagebox {
+        flex-basis: 100%;
+
+        img {
+          max-height: 150px;
+        }
+      }
+
+      &__namebox {
+        flex-basis: 100%;
+      }
+
+      &__nightsbox {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+          justify-content: center;
+        }
+      }
+
+      &__pricebox {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__deletebox {
+        flex-basis: 100%;
+      }
+    }
+  }
+}

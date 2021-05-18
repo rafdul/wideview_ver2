@@ -1,0 +1,65 @@
+@import '../../../styles/settings.scss';
+@import "../../../styles/mixins.scss";
+
+
+.root {
+  .container {
+    @include container;
+
+    .title {
+      margin: $main-spacing 0 $main-spacing*2 0;
+      text-align: center;
+    }
+
+    .title__empty {
+      margin: $main-spacing 0 100vh 0;
+      text-align: center;
+    }
+
+    // .background_success {
+    //   background-color: $color-background-green;
+    // }
+
+    .cart {
+      @include cart-box;
+    }
+
+    .total_price {
+    @include total_price;
+    }
+
+    @media(max-width: 500px) {
+      .total_price {
+        justify-content: center;
+
+      div:nth-child(1) {
+          margin-left: $main-spacing*2;
+        }
+      }
+    }
+
+    @media(max-width: 750px) {
+      .cart {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .container__success {
+    @include container;
+    margin: $main-spacing*10 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .titleSuccess {
+      text-align: center;
+    }
+
+    .iconSuccess {
+      margin-right: $main-spacing;
+      color: $color-text-success;
+      font-size: $base-size*5;
+    }
+  }
+}

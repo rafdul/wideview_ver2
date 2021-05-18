@@ -1,0 +1,18 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  display: flex;
+  justify-content: flex-start;
+
+  .inputSwitcher {
+    width: 30px;
+    margin: 0 $main-spacing/2;
+  }
+
+  .inputNumber {
+    width: 50px;
+    margin: 0 $main-spacing/2;
+    text-align: center;
+  }
+
+}

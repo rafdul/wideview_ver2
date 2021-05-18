@@ -1,0 +1,34 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  margin: 0 auto;
+  max-width: 1920px;
+  // }
+
+  .carousel__text{
+    bottom: 20%;
+    color: $color-carousel-text;
+
+    h1 {
+      font-family: $font-text-alternative;
+      font-weight: 700;
+
+      text-shadow: 4px 4px 10px rgba(27, 18, 0, 0.911);
+    }
+
+    @media(max-width: 700px) {
+      h1 {
+        font-size: $base-size*2;
+      }
+    }
+
+    @media(max-width: 400px) {
+      h1 {
+        font-size: $base-size*1.3;
+      }
+    }
+  }
+}
+
+
+

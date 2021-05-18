@@ -1,0 +1,79 @@
+@import '../../../styles/settings.scss';
+@import "../../../styles/mixins.scss";
+
+.root {
+  .container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      max-width: 275px;
+      min-width: 150px;
+
+      .image {
+        width: 100%;
+      }
+    }
+
+    .list {
+      background-color: #ffffff!important;
+
+      &_item {
+        font-family: $font-text;
+        font-size: $base-size*1.5;
+        margin: 0 $base-size;
+      }
+    }
+
+    &__cart {
+      margin: 0 $base-size*2;
+
+      .link {
+        color: $color-text;
+
+        .icon{
+          font-size: $base-size*2;
+
+          &:hover {
+            transform: scale(1.2, 1.2);
+            transition-duration: 400ms;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  @media(max-width: 800px) {
+    .container {
+      flex-wrap: wrap;
+
+      &__menu {
+        flex: 90%;
+        display: flex;
+        justify-content: space-around;
+        order: 1;
+      }
+    }
+  }
+
+  @media(max-width: 500px) {
+    .container {
+      &__logo {
+        max-width: 150px;
+      }
+
+      .list_flex {
+        flex-direction: column;
+
+        .list_item {
+          font-size: $base-size*1.2;
+        }
+      }
+    }
+
+  }
+}

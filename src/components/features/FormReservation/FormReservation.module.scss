@@ -1,0 +1,43 @@
+@import '../../../styles/settings.scss';
+@import "../../../styles/mixins.scss";
+
+.root {
+  .form_title {
+    margin: $main-spacing*2;
+    text-align: center;
+
+    &__success {
+      color: $color-text-success;
+      text-shadow: 2px 4px 10px $color-background-green;
+    }
+  }
+
+  .formContainer {
+    width: 50%;
+    margin: 0 auto;
+
+    &__item {
+      margin-bottom: $main-spacing;
+    }
+
+    input {
+      padding: $main-spacing;
+    }
+  }
+
+  .cart {
+    @include cart-box;
+  }
+
+  .total_price {
+    @include total_price;
+  }
+
+  .snackbarr__success {
+    @include snackbarr__success;
+  }
+
+  .snackbarr__error {
+    @include snackbarr__error;
+  }
+}

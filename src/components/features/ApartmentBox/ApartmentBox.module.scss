@@ -1,0 +1,40 @@
+@import '../../../styles/settings.scss';
+@import "../../../styles/mixins.scss";
+
+
+.cards__item {
+  @include flex-cards-item;
+  flex-basis: 30%;
+
+  .cardbox {
+    height: 100%;
+  }
+
+  .link {
+    text-decoration: none;
+    color: $color-text;
+  }
+
+  .imageContainer {
+
+    .image {
+      height: 50vh;
+    }
+  }
+
+  .text {
+    text-align: left;
+    font-family: $font-text;
+    letter-spacing: 2px;
+  }
+
+  .more {
+    text-align: center;
+    font-size: $base-size;
+    padding: $main-spacing;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
