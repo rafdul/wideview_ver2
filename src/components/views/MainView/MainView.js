@@ -24,10 +24,13 @@ class Component extends React.Component {
   componentDidMount() {
     const { fetchAllCategories } = this.props;
     fetchAllCategories();
+    console.log('fetchAllCategories  w MainView', fetchAllCategories );
   }
 
   render() {
     const { className, category, loading } = this.props;
+    console.log('category w MainView', category);
+    console.log('loading w MainView', loading);
 
     if(loading && loading.active === true) {
       return(
@@ -48,7 +51,7 @@ class Component extends React.Component {
           </div>
           <div className={styles.cards_group}>
 
-            {category.map(item => (
+            {category && category.map(item => (
               <div key={item.id} className={styles.cards_group__item}>
                 <Card  className={styles.flex}>
                   <CardActionArea>
@@ -71,6 +74,7 @@ class Component extends React.Component {
                 </Card>
               </div>
             ))}
+
           </div>
         </div>
       );

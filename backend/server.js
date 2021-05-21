@@ -22,22 +22,24 @@ app.use('/api', apartmentsRoutes);
 app.use('/api', ordersRoutes);
 app.use('/api', categoriesRoutes);
 
-/* API ERROR PAGES */
-app.use('/api', (req, res) => {
-  res.status(404).send({ apartment: 'Not found...' });
-});
-
 /* REACT WEBSITE */
 app.use(express.static(path.join(__dirname, '../build')));
 app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
+/* API ERROR PAGES */
+app.use('/api', (req, res) => {
+  res.status(404).send({ apartment: 'Not found...' });
+});
+
+
+
 
 
 /* MONGOOSE */
-mongoose.connect(`mongodb+srv://${process.env.userApp}:${process.env.mongoApp}@cluster0.67klc.mongodb.net/videwievDB?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
-// mongoose.connect(`mongodb+srv://rafal:kodilla@cluster0.67klc.mongodb.net/videwievDB?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect(`mongodb+srv://${process.env.userApp}:${process.env.mongoApp}@cluster0.67klc.mongodb.net/videwievDB?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb+srv://rafal:kodilla@cluster0.67klc.mongodb.net/videwievDB?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.once('open', () => {
   console.log('Successfully connected to the database');

@@ -4,12 +4,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'report-sample' 'self'; style-src 'report-sample' 'self'; object-src 'none'; base-uri 'self'; connect-src 'self'; font-src 'self'; frame-src 'self' https://www.google.com; img-src 'self'; manifest-src 'self'; media-src 'self'; report-uri https:; worker-src 'none';"> -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' *; frame-src * ; img-src 'self' data: https: maps.gstatic.com *.googleapis.com *.ggpht; script-src 'self' 'unsafe-inline' 'unsafe-eval' maps.googleapis.com google.com/maps maps.gstatic.com *; style-src 'self' 'unsafe-inline' *">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' *; frame-src * ; img-src 'self' data: https: maps.gstatic.com *.googleapis.com *.ggpht; script-src 'self' 'unsafe-inline' 'unsafe-eval' maps.googleapis.com google.com/maps maps.gstatic.com *; style-src 'self' 'unsafe-inline' *"> -->
     <title>WideView Apartments</title>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDB684q60AAfRuZ1pw27XWzRbGd647ktjA",
+        authDomain: "wideview2-a6f60.firebaseapp.com",
+        projectId: "wideview2-a6f60",
+        storageBucket: "wideview2-a6f60.appspot.com",
+        messagingSenderId: "1069967037642",
+        appId: "1:1069967037642:web:f0d204b1951cb06daf1033"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function () {
+              console.log('Service Worker Registered');
+          });
+      }
+    </script>
+
   </body>
 </html>

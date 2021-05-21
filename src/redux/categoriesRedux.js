@@ -21,19 +21,23 @@ export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 
 /* thunk creators */
 export const fetchAllCategories = () => {
-  return(dispatch, getState) => {
+  return async (dispatch, getState) => {
     const { categories } = getState();
 
+    console.log('categories.data.length:', categories.data.length);
+    console.log('categories.loading:', categories.loading);
     if(categories.data.length === 0 && categories.loading.active === false) {
       dispatch(fetchStarted());
 
-      Axios
+      await Axios
         .get(`${API_URL}/category`)
         .then(res => {
           dispatch(fetchSuccess(res.data));
+          console.log('res.data:', res.data);
         })
         .catch(err => {
           dispatch(fetchError(err.message || true));
+          console.log('err.message:', err.message);
         });
     }
   };
